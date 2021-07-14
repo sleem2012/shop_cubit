@@ -68,6 +68,17 @@ Widget defaultFormField({
       ),
     );
 
+Widget defaultTextButton({
+  @required Function function,
+  @required String text,
+}) =>
+    TextButton(
+      onPressed: function,
+      child: Text(
+        text.toUpperCase(),
+      ),
+    );
+
 Widget myDivider() => Padding(
       padding: const EdgeInsetsDirectional.only(
         start: 20.0,

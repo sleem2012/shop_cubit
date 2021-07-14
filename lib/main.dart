@@ -1,5 +1,7 @@
 import 'package:ecommerce_cubit/modules/onboarding_screen.dart';
 import 'package:ecommerce_cubit/shared/bloc_observer.dart';
+import 'package:ecommerce_cubit/shared/network/local/cache_helper.dart';
+import 'package:ecommerce_cubit/shared/network/remote/dio_helper.dart';
 import 'package:ecommerce_cubit/shared/styles/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,8 +12,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
 
-  // DioHelper.int();
-  // await CacheHelper.int();
+  DioHelper.init();
+  await CacheHelper.int();
 
   runApp(MyApp());
 }
